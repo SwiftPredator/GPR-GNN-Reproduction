@@ -1,0 +1,19 @@
+name: gprgnn
+channels:
+  - pytorch
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.9
+  - numpy
+  - pytorch
+  - black
+  - pylint
+  - ca-certificates
+  - certifi
+  - openssl
+  - pip
+  - pip:
+    - autopep8
+    - tqdm
+    - torch-geometric
