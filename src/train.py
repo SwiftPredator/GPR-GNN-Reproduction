@@ -80,7 +80,10 @@ def RunExp(args, dataset, data, Net, percls_trn, val_lb):
     val_loss_history = []
     val_acc_history = []
 
-    print(sum(p.numel() for p in model.parameters() if p.requires_grad))
+    print(
+        "Trainable parameters:",
+        sum(p.numel() for p in model.parameters() if p.requires_grad),
+    )
     for epoch in range(args.epochs):
         train(model, optimizer, data, args.dprate)
 

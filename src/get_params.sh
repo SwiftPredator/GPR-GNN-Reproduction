@@ -1,3 +1,9 @@
+
+# To get the trainable model parameters
+# this scripts runs every models once.
+
+# The train script outputs the trainable parameters itself
+
 CSV_NAME=params
 RPMAX=1
 DATASET=cSBM_data

@@ -1,6 +1,13 @@
 #! /bin/sh
-#
-# This script is to reproduce our results in Table 2.
+
+# This script runs each GPPRGN model on the by the authors 
+# specified hyperparameters on the real world dataset.
+# Each models is tested against the same datasets with default
+# parameters.
+
+# For each model this is done for 
+# 100 trials calulation the mean and std in the process.
+
 RPMAX=100
 csv_name=./table2_nogrid_100_gprnn.csv
 # Below is for homophily datasets, sparse split
@@ -105,27 +112,27 @@ python train.py --RPMAX $RPMAX \
         --csv_name $csv_name
 
 
-# for model in SGC MLP APPNP ChebNet JKNet GCN GAT
-# do
-#         for dat in cora citeseer pubmed computers photo
-#         do
-#                 python train.py --RPMAX $RPMAX \
-#                         --net $model \
-#                         --train_rate 0.025 \
-#                         --val_rate 0.025 \
-#                         --dataset $dat \
-#                         --csv_name $csv_name
-#         done
+for model in SGC MLP APPNP ChebNet JKNet GCN GAT
+do
+        for dat in cora citeseer pubmed computers photo
+        do
+                python train.py --RPMAX $RPMAX \
+                        --net $model \
+                        --train_rate 0.025 \
+                        --val_rate 0.025 \
+                        --dataset $dat \
+                        --csv_name $csv_name
+        done
 
-#         for dat in chameleon film squirrel texas cornell
-#         do
-#                 python train.py --RPMAX $RPMAX \
-#                         --net $model \
-#                         --train_rate 0.6 \
-#                         --val_rate 0.2 \
-#                         --dataset $dat \
-#                         --csv_name $csv_name
-#         done
+        for dat in chameleon film squirrel texas cornell
+        do
+                python train.py --RPMAX $RPMAX \
+                        --net $model \
+                        --train_rate 0.6 \
+                        --val_rate 0.2 \
+                        --dataset $dat \
+                        --csv_name $csv_name
+        done
 
-# done
+done
 
