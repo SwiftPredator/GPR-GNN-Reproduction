@@ -4,16 +4,24 @@ This is a reproduction of the paper [Adaptive Universal Generalized PageRank Gra
 
 Our environment can be installed easily with conda. Just call the following command in the working directory:
 
-`conda env create -f environment.yml`
+```bash
+conda env create -f environment.yml
+```
 
 ## Reproduction
 To reproduce our results you can run the provided bash files in the `src` directory:
 
-`./create_all_csbm_datasets.sh`
+```bash
+./create_all_csbm_datasets.sh
+```
 
-`./reproduce_no_grid_100_exp.sh`
+```bash
+./reproduce_no_grid_100_exp.sh
+```
 
-`./reproduce_fig2.sh`
+```bash
+./reproduce_fig2.sh
+```
 
 ## Paper
-Details about our approach for reproducing the original paper results can be found in [our own paper](reproduction_results.pdf). 
+Details about our approach for reproducing the original paper results can be found in [our own paper](reproduction_paper.pdf). 
